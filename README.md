@@ -26,7 +26,9 @@
 1. Create an empty Django project: `django-admin startproject djangoAPI`
 2. `cd djangoProject`
 3. Start a new Django application: `py manage.py startapp djangoAPI`
-4. Next steps are detailed with commits.
+4. Create migrations: `py manage.py makemigrations`
+5. Execute migrations: `py manage.py migrate`
+6. Next steps are detailed with commits.
 
 ## Resources
 
