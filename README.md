@@ -20,6 +20,7 @@
 
 - [Python](https://www.python.org/downloads/)
 - [Django](https://www.djangoproject.com/)
+- [DBeaver](https://dbeaver.io/)
 
 ## Steps
 
@@ -30,7 +31,7 @@
 5. Create migrations: `py manage.py makemigrations`
 6. Execute migrations: `py manage.py migrate`
 7. Create a super user to administrate your API: `py manage.py createsuperuser`
-8. Execute your server: `py manage.py runserver`
+8. Execute your server: show DATABASE`py manage.py runserver`
 
 ## Resources
 
