@@ -30,9 +30,4 @@
 
 ## Resources
 
-- [NPM Tool](https://www.npmjs.com/)
-- [Lodash Library](https://lodash.com/)
-- [MomentJS Library](https://momentjs.com)
-- [Jest Library](https://jestjs.io/)
-- [Intro to JS TDD](https://www.youtube.com/watch?v=SbKPgaRZsxA)
-- [README.md Guidelines](https://github.com/othneildrew/Best-README-Template)
+- [¿Cómo crear una API REST con DJANGO](https://youtu.be/XqRBb_4CLS4)
