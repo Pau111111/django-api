@@ -1,4 +1,6 @@
 import json
+import os
+from django.http.response import FileResponse, HttpResponse
 from django.shortcuts import render
 from django.views import View
 from django.http import JsonResponse
@@ -30,6 +32,12 @@ class CompanyDetailView(View):
         myClass = CustomClass.myMethod()
         jsonVar = {"data": 100}
         print("Holaaaa" + str(jsonVar["data"]))
+
+        # Enviar un fichero como respuesta
+        file = open('C:/Puchu/Personal_Projects/django-api/djangoProject/djangoAPI/src/files/test.txt', 'rb')
+        response = HttpResponse(FileResponse(file), content_type='application/octet-stream')
+        response['Content-Disposition'] = 'attachment; filename="%s"' % os.path.basename(file.name)
+        return response
 
         #El segundo parámetro "False" indica que no se va a devolver un objeto JSON, sinó un Array de objetos JSON
         return JsonResponse(jsonVar, safe=False)
