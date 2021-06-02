@@ -7,14 +7,19 @@ from django.http import JsonResponse
 from .models import Company
 from django.forms.models import model_to_dict
 from .src.MyClass import CustomClass
+from rest_framework.views import APIView
+from rest_framework_api_key.permissions import HasAPIKey
 
 # Create your views here.
-class CompanyListView(View):
+class CompanyListView(APIView):
+    permission_classes = [HasAPIKey] # Esta linea no es requerida creo
+
     def get(self, request):
         if('name' in request.GET):
             companyList = Company.objects.filter(name__contains=request.GET['name'])
         else:
             companyList = Company.objects.all()
+    
         #El segundo parámetro "False" indica que no se va a devolver un objeto JSON, sinó un Array de objetos JSON
         return JsonResponse(list(companyList.values()), safe=False)
     # def post(self, request):

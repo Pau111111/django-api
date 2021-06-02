@@ -14,6 +14,7 @@
 
 - [Requirements](#requirements)
 - [Steps](#steps)
+- [API Key Middleware](#api-key-middleware)
 - [Resources](#resources)
 
 ## Requirements
@@ -32,6 +33,28 @@
 6. Execute migrations: `py manage.py migrate`
 7. Create a super user to administrate your API: `py manage.py createsuperuser`
 8. Execute your server: show DATABASE`py manage.py runserver`
+
+## API Key Middleware
+
+> [API Key Library](https://pypi.org/project/djangorestframework-api-key/)
+
+- `pip install djangorestframework-api-key==2.*`
+  `or`
+- `pip3 install djangorestframework`
+
+```
+# settings.py
+
+INSTALLED_APPS = [
+
+# ...
+
+"rest_framework",
+"rest_framework_api_key",
+]
+```
+
+- `python manage.py migrate`
 
 ## Resources
 
