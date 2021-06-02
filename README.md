@@ -55,6 +55,9 @@ INSTALLED_APPS = [
 ```
 
 - `python manage.py migrate`
+- `pip install django-cors-headers`
+
+INSTALLED APPS -> 'corsheaders'
 
 ## Resources
 
