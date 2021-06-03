@@ -42,6 +42,10 @@ class CompanyDetailView(View):
         file = open('C:/Puchu/Personal_Projects/django-api/djangoProject/djangoAPI/src/files/test.txt', 'rb')
         response = HttpResponse(FileResponse(file), content_type='application/octet-stream')
         response['Content-Disposition'] = 'attachment; filename="%s"' % os.path.basename(file.name)
+        # response["Access-Control-Allow-Origin"] = "*";
+        # response["Access-Control-Allow-Methods"] = "GET,HEAD,OPTIONS,POST,PUT";
+        # response["Access-Control-Allow-Headers"] =  "Origin, X-Requested-With, Content-Type, Accept, Authorization, Content-Type";
+        # response['Access-Control-Allow-Origin'] = "*"
         return response
 
         #El segundo parámetro "False" indica que no se va a devolver un objeto JSON, sinó un Array de objetos JSON
