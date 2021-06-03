@@ -39,9 +39,12 @@ class CompanyDetailView(View):
         print("Holaaaa" + str(jsonVar["data"]))
 
         # Enviar un fichero como respuesta
-        file = open('C:/Puchu/Personal_Projects/django-api/djangoProject/djangoAPI/src/files/test.txt', 'rb')
+        # file = open('C:/Puchu/Personal_Projects/django-api/djangoProject/djangoAPI/src/files/test.txt', 'rb')
+        file = open('C:/Puchu/Personal_Projects/django-api/djangoProject/djangoAPI/src/MyClass.py', 'rb')
         response = HttpResponse(FileResponse(file), content_type='application/octet-stream')
         response['Content-Disposition'] = 'attachment; filename="%s"' % os.path.basename(file.name)
+        response['File-Name'] = os.path.basename(file.name)
+        response['Access-Control-Expose-Headers'] = 'File-Name';
         # response["Access-Control-Allow-Origin"] = "*";
         # response["Access-Control-Allow-Methods"] = "GET,HEAD,OPTIONS,POST,PUT";
         # response["Access-Control-Allow-Headers"] =  "Origin, X-Requested-With, Content-Type, Accept, Authorization, Content-Type";
